@@ -1,4 +1,5 @@
-#!/bin/ash
+#!/bin/bash
+# should run in the ash shell, but I don't have that installed
 
 MYIP=$(/sbin/ifconfig eth0|grep 'inet addr'|awk -F: '{print $2}'| awk '{print $1}');
 PICTURE=$1
