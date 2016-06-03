@@ -1,7 +1,7 @@
 #!/bin/bash
 # should run in the ash shell, but I don't have that installed
 
-MYIP=$(/sbin/ifconfig eth0|grep 'inet addr'|awk -F: '{print $2}'| awk '{print $1}');
+MYIP=$(/sbin/ifconfig |grep 'inet addr'|grep -v 127.0.0.1|awk -F: '{print $2}'| awk '{print $1}');
 PICTURE=$1
 stars=$(head -c 10000 < /dev/zero | tr '\0' O)
 #        var cheads="<span style='color: hsl(" + hash % 360 + ",100%,30%)'>" + headers + "</span>"
