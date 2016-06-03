@@ -149,7 +149,7 @@ HTTP/1.0 200 OK
 	<h3>Order now:</h3>
 	<ul>
 	<li><a href=#>Roses</a></li>
-	<li><a href=#>O:qrchid</a></li>
+	<li><a href=#>Orchid</a></li>
 	<li><a href=#>Iris</a></li>
 	<li><a href=#>Lily</a></li>
 	<li><a href=#>Sunflower</a></li>
