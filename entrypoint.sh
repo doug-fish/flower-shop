@@ -10,4 +10,5 @@ PICINDEX=$(($HASH % $PICCOUNT + 1))
 PICTURE=$(sed "$((PICINDEX))q;d" images.txt)
 
 ./flower-shop.sh $PICTURE &
-sleep 60*60*24
+# 60*60*24
+sleep 86400
