@@ -3,7 +3,8 @@
 
 MYIP=$(/sbin/ifconfig |grep 'inet addr'|grep -v 127.0.0.1|awk -F: '{print $2}'| awk '{print $1}');
 
-HASHHEX=$(echo $MYIP | /usr/bin/md5sum | awk '{print $1}')
+#make sure it starts with a 1 so it isn't negative.
+HASHHEX=$(echo $MYIP | /usr/bin/md5sum | awk '{print 1$1}' | cut -c1-8)
 HASH=$((16#$HASHHEX))
 PICCOUNT=$(cat images.txt | wc -l)
 PICINDEX=$(($HASH % $PICCOUNT + 1))
