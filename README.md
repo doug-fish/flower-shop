@@ -11,3 +11,9 @@ launch the container in a group with
 make it available with
 
     cf ic route map -n drf-flowershop -d mybluemix.net flower-shop
+
+Used images
+http://www.public-domain-photos.com/flowers/daisy-detail-4.htm
+http://www.public-domain-photos.com/flowers/apricot-colored-rose-closeup-3.htm
+http://www.public-domain-photos.com/flowers/pink-flowers-4.htm
+can we do this?

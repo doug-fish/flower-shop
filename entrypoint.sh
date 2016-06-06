@@ -2,7 +2,12 @@
 # should run in the ash shell, but I don't have that installed
 
 MYIP=$(/sbin/ifconfig |grep 'inet addr'|grep -v 127.0.0.1|awk -F: '{print $2}'| awk '{print $1}');
-PICTURE=$1
+
+HASHHEX=$(echo $MYIP | /usr/bin/md5sum | awk '{print $1}')
+HASH=$((16#$HASHHEX))
+PICCOUNT=$(cat images.txt | wc -l)
+PICINDEX=$(($HASH % $PICCOUNT + 1))
+PICTURE=$(sed "$((PICINDEX))q;d" images.txt)
 stars=$(head -c 10000 < /dev/zero | tr '\0' O)
 #        var cheads="<span style='color: hsl(" + hash % 360 + ",100%,30%)'>" + headers + "</span>"
 : <<EEE
@@ -64,7 +69,7 @@ HTTP/1.0 200 OK
 	
 	#content-inner { margin:0 auto; padding:10px 0; width:970px;background:#fff;}
 	#content #contentbar { margin:0; padding:0; float:right; width:760px;}
-	#content #contentbar .article { margin:0 0 24px; padding:0 20px 0 15px; }
+	#content #contentbar .article { margin:0 0 24px; padding:0 20px 0 15px;color:hsl($(($HASH % 360)), 100%, 30%) }
 	#content #sidebar { padding:0; float:left; width:200px;}
 	#content #sidebar .widget { margin:0 0 12px; padding:8px 8px 8px 13px;line-height:1.4em;}
 	#content #sidebar .widget h3 a { text-decoration:none;}
@@ -109,7 +114,7 @@ HTTP/1.0 200 OK
 	</header>
 	<div class="feature">
 	<div class="feature-inner">
-	<h1>Your online flower shop <span style="color:#ffff00">@ [$MYIP]</span></h1>
+	<h1 style='color:#ffff00'>Your online flower shop <span>@ [$MYIP] [$PICINDEX] </span></h1>
 	</div>
 	</div>
 
@@ -138,7 +143,8 @@ HTTP/1.0 200 OK
             }
         }
         i = headers.indexOf("amphora_server")
-        document.write("<span style='font-size:20px; color: hsl(" + hash % 360 + ",100%,30%)'>" + headers.slice(i) + "</span>");
+        document.write("<span style='font-size:20px; color: hsl(" +  hash  % 360 + ",100%,30%)'>" + headers.slice(i) + "</span>");
+
 
 	</script>
 	
