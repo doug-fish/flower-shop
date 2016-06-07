@@ -3,29 +3,10 @@
 
 MYIP=$(/sbin/ifconfig |grep 'inet addr'|grep -v 127.0.0.1|awk -F: '{print $2}'| awk '{print $1}');
 PICTURE=$1
-stars=$(head -c 10000 < /dev/zero | tr '\0' O)
-#        var cheads="<span style='color: hsl(" + hash % 360 + ",100%,30%)'>" + headers + "</span>"
-: <<EEE
-	<script>
-        var req = new XMLHttpRequest();
-        req.open('GET', document.location, false);
-        req.send(null);
-        var headers = req.getAllResponseHeaders().toLowerCase();
-        document.write("<h3>More</h3>");
-        var hash = 0, i, chr, len
-        if (headers.length > 0) {
-            for (i = 0, len = headers.length; i < len; i++) {
-                chr   = headers.charCodeAt(i);
-                hash  = ((hash << 5) - hash) + chr;
-                hash |= 0; // Convert to 32bit integer
-            }
-        }
-        document.write(headers);
-	</script>
-EEE
 
 while true; do
     echo -e "LISTENING\r\n"
+    echo -e `date`
     sudo nc -l -p 80 -w 1 <<EOF
 HTTP/1.0 200 OK
 
@@ -124,24 +105,6 @@ HTTP/1.0 200 OK
 	</p>
 	</div>
 
-	<script>
-        var req = new XMLHttpRequest();
-        req.open('GET', document.location, false);
-        req.send(null);
-        var headers = req.getAllResponseHeaders().toLowerCase();
-        var hash = 0, i, chr, len
-        if (headers.length > 0) {
-            for (i = headers.indexOf("amphora_server"), len = headers.length; i < len; i++) {
-                chr   = headers.charCodeAt(i);
-                hash  = ((hash << 5) - hash) + chr;
-                hash |= 0; // Convert to 32bit integer
-            }
-        }
-        i = headers.indexOf("amphora_server")
-        document.write("<span style='font-size:20px; color: hsl(" + hash % 360 + ",100%,30%)'>" + headers.slice(i) + "</span>");
-
-	</script>
-	
 	</main>
 
 	<nav id="sidebar">
