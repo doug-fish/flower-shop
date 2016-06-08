@@ -13,6 +13,7 @@ HTTP/1.0 200 OK
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta http-equiv="refresh" content="5">
 	<title>Flower Shop</title>
 	<style type="text/css">
     html, #page { padding:0; margin:0;}
@@ -155,5 +156,4 @@ HTTP/1.0 200 OK
 	</html>
 EOF
     echo -e "DONE\r\n"
-done
 done
