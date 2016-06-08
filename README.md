@@ -44,7 +44,14 @@ script, plus any `nc` processes.
     root@instance-0047d230:/# kill -9 38 789 790
  
 Used images:
-htttp://www.public-domain-photos.com/flowers/daisy-detail-4.htm
-htstp://www.public-domain-photos.com/flowers/apricot-colored-rose-closeup-3.htm
+http://www.public-domain-photos.com/flowers/daisy-detail-4.htm
+http://www.public-domain-photos.com/flowers/apricot-colored-rose-closeup-3.htm
 http://www.public-domain-photos.com/flowers/pink-flowers-4.htm
+http://www.public-domain-photos.com/flowers/hibiscus-3-4.htm
+http://www.public-domain-photos.com/flowers/red-tulips-3.htm
+http://www.public-domain-photos.com/flowers/sun-flower-3-4.htm
+http://www.public-domain-photos.com/flowers/orchids-4.htm
+http://www.public-domain-photos.com/flowers/iris-blue-3.htm
+http://www.public-domain-photos.com/flowers/lily-3-1.htm
+
 can we do this? what acknowledgement is required?
