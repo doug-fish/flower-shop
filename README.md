@@ -16,9 +16,10 @@ launch the container in a group with
 
     cf ic group create -p 80 --auto --name flower-shop registry.ng.bluemix.net/drfish/flower-shop
 
-make it available with
+make it available with: (You'll probably need to change demo-flowershop to a different name.
+I'm using that one!)
 
-    cf ic route map -n drf-flowershop -d mybluemix.net flower-shop
+    cf ic route map -n demo-flowershop -d mybluemix.net flower-shop
 
 You can see the containers in the group with the command
 
