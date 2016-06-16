@@ -1,7 +1,7 @@
 Flower shop is an app suitable for demonstrating that load balancing is happening. It includes a Dockerfile to build it into a
  container image, and startup scripting to make it easier to show a failure scenario.
 
-[![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https://github.ibm.com/drfish/flower-shop)
+[![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https://github.com/doug-fish/flower-shop)
 
 Alternative, to use flower-shop manually with the IBM container service follow Step 1 of this
 tutorial:
