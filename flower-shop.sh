@@ -1,7 +1,8 @@
 #!/bin/bash
 # should run in the ash shell, but I don't have that installed
 
-MYIP=$(/sbin/ifconfig |grep 'inet addr'|grep -v 127.0.0.1|awk -F: '{print $2}'| awk '{print $1}');
+MYIP=$(/sbin/ifconfig |grep 'inet addr'|grep -v 127.0.0.1|
+    awk -F: '{print $2}'| awk '{print $1}');
 PICTURE=$1
 
 while true; do
