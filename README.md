@@ -11,7 +11,7 @@ https://new-console.ng.bluemix.net/docs/containers/container_gettingstarted_tuto
 
 build the project with 
 
-    git clone https://github.rtp.raleigh.ibm.com/drfish-us/flower-shop
+    git clone [this repo]
     cd flower-shop
     cf ic build -t registry.ng.bluemix.net/drfish/flower-shop .
 
