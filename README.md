@@ -1,10 +1,12 @@
-Flower Shop is an app suitable for demonstrating that load balancing is happening. It includes a Dockerfile to build it into a container image, and startup scripting to make it easier to show a failure scenario.
+#'Flower Shop' Overview
+
+Flower Shop is an app suitable for demonstrating that container load balancing is happening. It includes a Dockerfile to build it into a container image, and startup scripting to make it easier to show a failure scenario.
 
 Flower Shop includes the IP address of the OS it has been served from. This is for the purpose of understanding how load balancing is performing. The IP address is hashed into an index to choose a flower that associated with the server. Again, the purpose is to expose different servers running behind a load balance; the flower image is intended to make the difference more visual.
 
 Flower Shop has scripting included to break the service. Basically you just exec into the container and run stop-servers.sh. See below for details.
 
-# Deploying and Using Flower-shop
+## Running Flower Shop on Bluemix
 
 You can deploy Flower-Shop into your own IBM Bluemix space by clicking this button:
 
@@ -39,24 +41,6 @@ For example, to stop the flower-shop app to show failover or otherwise test load
     root         834  0.0  0.0  15568  2116 ?        R+   15:54   0:00 ps aux
     root@instance-0047d230:/# ./stop-services.sh
 
-# Manual setup
-To run without using the Deploy to Bluemix button:
-
-build the project with 
-
-    git clone [this repo]
-    cd flower-shop
-    cf ic build -t registry.ng.bluemix.net/drfish/flower-shop .
-
-launch the container in a group with
-
-    cf ic group create -p 80 --auto --name flower-shop registry.ng.bluemix.net/drfish/flower-shop
-
-make it available with: (You'll probably need to change demo-flowershop to a different name.
-I'm using that one!)
-
-    cf ic route map -n demo-flowershop -d mybluemix.net flower-shop
- 
 Used images:
 
 		http://www.public-domain-photos.com/flowers/daisy-detail-4.htm
