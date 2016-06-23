@@ -1,5 +1,4 @@
-# Generated from
-# https://hub.jazz.net/pipeline/dougfish/flower-shop-deploy/yaml
+# generated from https://hub.jazz.net/pipeline/dougfish/flower-shop-deploy/yaml
 ---
 stages:
 - name: ':'
@@ -56,6 +55,13 @@ stages:
     job: Build
   triggers:
   - type: stage
+  properties:
+  - name: ROUTE_HOSTNAME
+    value: flower-shop-demo
+    type: text
+  - name: ROUTE_DOMAIN
+    value: mybluemix.net
+    type: text
   jobs:
   - name: Deploy
     type: deployer
@@ -110,17 +116,18 @@ stages:
       \ Number       Number of versions of this group to leave active.\n#        \
       \                            Default is 1\n# IF YOU WANT CONTAINER GROUPS ..\
       \ uncomment the next line, and comment out the previous deployment line (/bin/bash\
-      \ deployscripts/deploygroup.sh)\n#/bin/bash deployscripts/deploygroup.sh\nROUTE_HOSTNAME=flower-shop-demo\n\
-      ROUTE_DOMAIN=mybluemix.net\nAUTO_RECOVERY=true\nDESIRED_INSTANCES=2\n/bin/bash\
-      \ deployscripts/deploygroup.sh\n\nRESULT=$?\n\n# source the deploy property\
-      \ file\nif [ -f \"${DEPLOY_PROPERTY_FILE}\" ]; then\n  source \"$DEPLOY_PROPERTY_FILE\"\
-      \nfi\n\n#########################\n# Environment DETAILS   #\n#########################\n\
-      # The environment has been setup.\n# The Cloud Foundry CLI (cf), IBM Container\
-      \ Service CLI (ice), Git client (git), IDS Inventory CLI (ids-inv) and Python\
-      \ 2.7.3 (python) have been installed.\n# Based on the organization and space\
-      \ selected in the Job credentials are in place for both IBM Container Service\
-      \ and IBM Bluemix\n\n# The following colors have been defined to help with presentation\
-      \ of logs: green, red, label_color, no_color.\nif [ $RESULT -ne 0 ]; then\n\
-      \    echo -e \"${red}Executed failed or had warnings ${no_color}\"\n    ${EXT_DIR}/print_help.sh\n\
+      \ deployscripts/deploygroup.sh)\n#/bin/bash deployscripts/deploygroup.sh\nset\
+      \ ROUTE_HOSTNAME=flower-shop-demo\nset ROUTE_DOMAIN=mybluemix.net\nset AUTO_RECOVERY=true\n\
+      set DESIRED_INSTANCES=2\n/bin/bash deployscripts/deploygroup.sh\n\nRESULT=$?\n\
+      \n# source the deploy property file\nif [ -f \"${DEPLOY_PROPERTY_FILE}\" ];\
+      \ then\n  source \"$DEPLOY_PROPERTY_FILE\"\nfi\n\n#########################\n\
+      # Environment DETAILS   #\n#########################\n# The environment has\
+      \ been setup.\n# The Cloud Foundry CLI (cf), IBM Container Service CLI (ice),\
+      \ Git client (git), IDS Inventory CLI (ids-inv) and Python 2.7.3 (python) have\
+      \ been installed.\n# Based on the organization and space selected in the Job\
+      \ credentials are in place for both IBM Container Service and IBM Bluemix\n\n\
+      # The following colors have been defined to help with presentation of logs:\
+      \ green, red, label_color, no_color.\nif [ $RESULT -ne 0 ]; then\n    echo -e\
+      \ \"${red}Executed failed or had warnings ${no_color}\"\n    ${EXT_DIR}/print_help.sh\n\
       \    exit $RESULT\nfi\necho -e \"${green}Execution complete${no_label}\""
 
