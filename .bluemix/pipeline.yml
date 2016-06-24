@@ -55,6 +55,10 @@ stages:
     job: Build
   triggers:
   - type: stage
+  properties:
+  - name: ROUTE_HOSTNAME
+    value: ${CF_APP}
+    type: text
   jobs:
   - name: Deploy
     type: deployer
