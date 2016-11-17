@@ -21,7 +21,7 @@ PICTURE=$1
 while true; do
     echo -e "LISTENING\r\n"
     echo -e `date`
-    nc -l -p 80 -w 1 <<EOF
+    nc -l -p 8080 -w 1 <<EOF
 HTTP/1.0 200 OK
 
 <html>
