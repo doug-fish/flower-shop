@@ -28,7 +28,7 @@ HTTP/1.0 200 OK
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <meta http-equiv="refresh" content="5">
-	<title>Flower Shop</title>
+	<title>Demo Flower Shop</title>
 	<style type="text/css">
     html, #page { padding:0; margin:0;}
 	body { margin:0; padding:0; width:100%; color:#959595; font:normal 12px/2.0em Sans-Serif;} 
