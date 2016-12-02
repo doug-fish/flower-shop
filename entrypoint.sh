@@ -14,7 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-MYIP=$(/sbin/ifconfig |grep 'inet addr'|grep -v 127.0.0.1|
+MYIP=$(/sbin/ifconfig |grep 'inet '|grep -v 127.0.0.1|
     awk -F: '{print $2}'| awk '{print $1}');
 
 #make sure it starts with a 1 so it isn't negative.
