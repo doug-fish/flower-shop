@@ -15,7 +15,7 @@
 # limitations under the License.
 
 MYIP=$(/sbin/ifconfig |grep 'inet '|grep -v 127.0.0.1|
-    awk -F: '{print $2}'| awk '{print $1}');
+    awk '{print $2}');
 PICTURE=$1
 
 while true; do
