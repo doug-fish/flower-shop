@@ -1,5 +1,6 @@
 FROM drf-managed-image
-RUN yum install -y nc
+RUN yum install -y nc && \
+    yum install -y net-tools
 COPY entrypoint.sh /entrypoint.sh
 COPY images.txt /images.txt
 COPY flower-shop.sh /flower-shop.sh
