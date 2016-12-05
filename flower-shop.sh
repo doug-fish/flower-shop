@@ -90,7 +90,7 @@ HTTP/1.0 200 OK
 	<header id="header">
 	<div id="header-inner">	
 	<div id="logo">
-	<h1><a href=#>Flower Shop</a></h1>
+	<h1><a href=#>Demo Flower Shop</a></h1>
 	</div>
 	<div id="top-nav">
 	<ul>
