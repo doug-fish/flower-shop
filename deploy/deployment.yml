@@ -1,0 +1,34 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    run: flower-shop
+  name: flower-shop
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      run: flower-shop
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+    type: RollingUpdate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        run: flower-shop
+    spec:
+      containers:
+      - image: mcakscontainerarchacr.azurecr.io/m164032/flower-shop:latest
+        imagePullPolicy: Always
+        name: flower-shop
+        resources: {}
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
