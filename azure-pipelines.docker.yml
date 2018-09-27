@@ -11,6 +11,6 @@ steps:
   displayName: 'Run a one-line script'
 
 - script: |
-    docker build -t $(dockerId)/$(imageName) .
+    docker build -t $(dockerId)/$(imageName):$(buildId) .
   displayName: 'Docker build'
 
