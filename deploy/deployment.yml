@@ -21,7 +21,7 @@ spec:
         run: flower-shop
     spec:
       containers:
-      - image: mcakscontainerarchacr.azurecr.io/m164032/flower-shop:latest
+      - image: dougfish1/flower-shop:latest
         imagePullPolicy: Always
         name: flower-shop
         resources: {}

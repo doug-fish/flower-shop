@@ -1,0 +1,84 @@
+{
+  "modified": "2018-11-07T20:43:39.492Z",
+  "owner": "admin",
+  "name": "Model rule - dougfish1/flower-shop:latest",
+  "previousName": "",
+  "labels": [],
+  "resources": {
+    "hosts": [
+      "*"
+    ],
+    "images": [
+      "dougfish1/flower-shop:*"
+    ],
+    "labels": [
+      "*"
+    ],
+    "containers": [
+      "*"
+    ]
+  },
+  "advancedProtection": true,
+  "processes": {
+    "effect": "block",
+    "blacklist": [],
+    "whitelist": [
+      "/bin/bash",
+      "/bin/echo",
+      "/bin/chmod",
+      "/usr/bin/dpkg-divert",
+      "/bin/cp",
+      "/bin/sed",
+      "/usr/bin/cut",
+      "/bin/sleep",
+      "/usr/bin/mawk",
+      "/usr/bin/wc",
+      "/usr/bin/md5sum",
+      "/bin/cat",
+      "/bin/date",
+      "/bin/nc.traditional",
+      "/usr/bin/id"
+    ],
+    "checkCryptoMiners": true,
+    "checkLateralMovement": false,
+    "checkParentChild": false
+  },
+  "syscalls": {
+    "effect": "alert",
+    "staticProfiles": false,
+    "whitelist": [],
+    "blacklist": []
+  },
+  "network": {
+    "effect": "block",
+    "blacklistIPs": [],
+    "blacklistListeningPorts": [],
+    "whitelistListeningPorts": [
+      {
+        "start": 8080,
+        "end": 8080
+      }
+    ],
+    "blacklistOutboundPorts": [],
+    "whitelistOutboundPorts": [],
+    "whitelistIPs": [],
+    "whitelistDomains": [],
+    "blacklistDomains": [],
+    "detectPortScan": true,
+    "detectDomains": false
+  },
+  "filesystem": {
+    "effect": "block",
+    "blacklist": [],
+    "whitelist": [
+      "/tmp"
+    ],
+    "checkNewFiles": true,
+    "backdoorFiles": true
+  },
+  "kubernetes": {
+    "enabled": false
+  },
+  "policyType": "containerRuntime",
+  "exportTime": "11_20_18_10_09_39"
+}

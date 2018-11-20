@@ -5,7 +5,6 @@ metadata:
     run: flower-shop
   name: flower-shop
 spec:
-  externalTrafficPolicy: Cluster
   ports:
   - name: flower-shop
     port: 80
@@ -13,4 +12,3 @@ spec:
     targetPort: 8080
   selector:
     run: flower-shop
-  type: LoadBalancer
