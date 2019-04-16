@@ -1,0 +1,12 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: flower-shop
+spec:
+  rules:
+  - host: flower-shop.doug
+    http:
+      paths:
+      - backend:
+          serviceName: flower-shop-int
+          servicePort: 80
