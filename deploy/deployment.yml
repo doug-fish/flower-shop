@@ -1,11 +1,14 @@
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
+  annotations:
+    mayo.dcis.https-sidecar: inject
+    mayo.dcis.https-sidecar-port: "8080"
   labels:
     run: flower-shop
   name: flower-shop
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       run: flower-shop

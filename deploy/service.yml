@@ -7,8 +7,7 @@ metadata:
 spec:
   ports:
   - name: flower-shop-int
-    port: 80
+    port: 443
     protocol: TCP
-    targetPort: 8080
   selector:
     run: flower-shop
