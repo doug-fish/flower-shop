@@ -12,6 +12,6 @@ spec:
       - backend:
           serviceName: flower-shop-int
           servicePort: 443
-  - tls:
-    - hosts:
-      flower-shop.doug
+  tls:
+  - hosts:
+    - flower-shop.doug
