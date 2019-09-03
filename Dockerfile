@@ -1,5 +1,5 @@
-FROM ubuntu:18.04
-RUN apt-get update -y && apt-get install -y netcat-traditional
+FROM centos:7
+RUN yum install -y nc
 USER nobody
 COPY entrypoint.sh /entrypoint.sh
 COPY images.txt /images.txt
