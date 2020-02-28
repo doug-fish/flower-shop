@@ -6,7 +6,7 @@ metadata:
     nginx.ingress.kubernetes.io/secure-backends: "true"
 spec:
   rules:
-  - host: flower-shop.drfaksdemo.mayo.edu
+  - host: flower-shop.kubeprodce-aks.mayo.edu
     http:
       paths:
       - backend:
