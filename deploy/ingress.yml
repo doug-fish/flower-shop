@@ -14,4 +14,4 @@ spec:
           servicePort: 443
   tls:
   - hosts:
-    - flower-shop.drfaksdemo.mayo.edu
+    - flower-shop.kubeprodce-aks.mayo.edu
